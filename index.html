@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+</head>
+<body>
+    <h2>Formularz Rejestracji</h2>
+    <form action="register.php" method="post">
+        <label for="firstName">Imię:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Nazwisko:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+
+        <label for="username">Login:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="address">Adres:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="education">Wykształcenie:</label>
+        <select id="education" name="education">
+            <option value="podstawowe">Podstawowe</option>
+            <option value="średnie">Średnie</option>
+            <option value="wyższe">Wyższe</option>
+        </select><br>
+
+        <label for="interests">Zainteresowania:</label><br>
+        <input type="checkbox" id="interest1" name="interests[]" value="sport"> Sport
+        <input type="checkbox" id="interest2" name="interests[]" value="muzyka"> Muzyka
+        <input type="checkbox" id="interest3" name="interests[]" value="film"> Film
+        <input type="checkbox" id="interest4" name="interests[]" value="książki"> Książki
+        <input type="checkbox" id="interest5" name="interests[]" value="podróże"> Podróże<br>
+
+        <input type="submit" value="Zarejestruj">
+    </form>
+</body>
+</html>
