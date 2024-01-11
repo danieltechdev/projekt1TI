@@ -30,6 +30,18 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+echo "<h2>Zapisane dane:</h2>";
+echo "<ul>";
+echo "<li>Imię: " . htmlspecialchars($firstName) . "</li>";
+echo "<li>Nazwisko: " . htmlspecialchars($lastName) . "</li>";
+echo "<li>Unikalny login: " . htmlspecialchars($username) . "</li>";
+echo "<li>E-mail: " . htmlspecialchars($email) . "</li>";
+echo "<li>Adres: " . htmlspecialchars($address) . "</li>";
+echo "<li>Wykształcenie: " . htmlspecialchars($education) . "</li>";
+echo "<li>Zainteresowania: " . htmlspecialchars($interests) . "</li>";
+echo "</ul>";
+
+
 // Zamknięcie połączenia
 $conn->close();
 ?>

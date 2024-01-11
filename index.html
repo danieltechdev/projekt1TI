@@ -36,9 +36,26 @@
             background-color: #45a049;
         }
     </style>
+        <script>
+            function validateForm() {
+                var interests = document.getElementsByName("interests[]");
+                var selectedOptions = 0;
+    
+                for (var i = 0; i < interests.length; i++) {
+                    if (interests[i].checked) {
+                        selectedOptions++;
+                    }
+                }    
+                if (selectedOptions < 5) {
+                    alert("Wybierz co najmniej 5 zainteresowań.");
+                    return false; // Zapobiegnij przesłaniu formularza
+                }    
+                return true; // Pozwól na przesłanie formularza
+            }ś
+        </script>
 </head>
 <body>
-    <form action="register.php" method="post">
+    <form id="registrationForm" action="register.php" method="post" onsubmit="return validateForm()">
         <label for="firstName">Imię:</label>
         <input type="text" name="firstName" required>
 
@@ -65,14 +82,34 @@
         </select>
 
         <label for="interests">Zainteresowania (wybierz co najmniej 5):</label>
-        <select name="interests[]" multiple size="5" required>
-            <option value="sport">Sport</option>
-            <option value="muzyka">Muzyka</option>
-            <option value="czytanie">Czytanie</option>
-            <option value="podróże">Podróże</option>
-            <option value="sztuka">Sztuka</option>
-        </select>
-
+        <div>
+            <input type="checkbox" id="sport" name="interests[]" value="sport">
+            <label for="sport">Sport</label>
+    
+            <input type="checkbox" id="muzyka" name="interests[]" value="muzyka">
+            <label for="muzyka">Muzyka</label>
+    
+            <input type="checkbox" id="czytanie" name="interests[]" value="czytanie">
+            <label for="czytanie">Czytanie</label>
+    
+            <input type="checkbox" id="podroze" name="interests[]" value="podroze">
+            <label for="podroze">Podróże</label>
+    
+            <input type="checkbox" id="sztuka" name="interests[]" value="sztuka">
+            <label for="sztuka">Sztuka</label>
+    
+            <input type="checkbox" id="gry" name="interests[]" value="gry">
+            <label for="gry">Gry</label>
+    
+            <input type="checkbox" id="nauka" name="interests[]" value="nauka">
+            <label for="nauka">Nauka</label>
+    
+            <input type="checkbox" id="film" name="interests[]" value="film">
+            <label for="film">Film</label>
+    
+            <input type="checkbox" id="motoryzacja" name="interests[]" value="motoryzacja">
+            <label for="motoryzacja">Motoryzacja</label>
+        </div>
         <input type="submit" value="Zarejestruj">
     </form>
 </body>
